@@ -23,6 +23,15 @@ const loginSchema = z.object({
   rememberMe: z.boolean().default(false),
 });
 
+const form = useForm<LoginFormData>({
+  resolver: zodResolver(loginSchema),
+  defaultValues: {
+    email: "",
+    password: "",
+    rememberMe: false, // ✅ matches schema exactly
+  },
+});
+
 type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
