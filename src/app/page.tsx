@@ -21,7 +21,8 @@ import {
   ArrowRight,
   BarChart3,
   Activity,
-  Clock
+  Clock,
+  Plus // <-- Added missing import
 } from "lucide-react";
 
 // Create a query client for TanStack Query
@@ -323,7 +324,7 @@ export default function HomePage() {
   }, [refetch, router]);
 
   // Handle route changes
-  const handleRouteChange = useCallback((route: string) => {
+  const handleRouteChange = useCallback((route: RouteKey | string) => {
     if (route === "profile") {
       // Handle profile route - could open a profile modal or navigate
       return;

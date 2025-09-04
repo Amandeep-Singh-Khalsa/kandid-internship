@@ -62,10 +62,10 @@ export default function LoginPage() {
 
   const onSubmit = async (data: LoginFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const callbackUrl = searchParams?.get("callbackUrl") || "/";
-      
+
       const { error } = await authClient.signIn.email({
         email: data.email,
         password: data.password,
@@ -90,10 +90,10 @@ export default function LoginPage() {
 
   const handleGoogleSignIn = async () => {
     setIsGoogleLoading(true);
-    
+
     try {
       const callbackUrl = searchParams?.get("callbackUrl") || "/";
-      
+
       const { error } = await authClient.signIn.social({
         provider: "google",
         callbackURL: callbackUrl,
@@ -142,7 +142,7 @@ export default function LoginPage() {
             Sign in to your account to continue
           </CardDescription>
         </CardHeader>
-        
+
         <CardContent className="space-y-6">
           <Button
             variant="outline"
