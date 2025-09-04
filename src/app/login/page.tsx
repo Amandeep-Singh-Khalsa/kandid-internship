@@ -20,7 +20,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   password: z.string().min(8, "Password must be at least 8 characters"),
-  rememberMe: z.boolean().default(false),
+  rememberMe: z.boolean().optional(),
 });
 
 const form = useForm<LoginFormData>({
